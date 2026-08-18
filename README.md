@@ -1,11 +1,27 @@
-# vinext app
+# SunVolt Store — vinext + Cloudflare Workers
 
-This project was created with create-vinext-app.
+The SunVolt solar & electrical equipment store, ported to run on
+Cloudflare's vinext (Next.js App Router on Vite + Workers).
 
-## Scripts
+## Local development
 
-- `pnpm run dev` startssss the vinext dev server.
-- `pnpm run build` builds the Cloudflare Worker output.
-- `pnpm run start` starts the built Worker locally with Wrangler.
-- `pnpm run deploy` deploys the Cloudflare Worker.
+```bash
+npm install
+npm run dev      # vinext dev server
+```
 
+## Build & deploy to Cloudflare
+
+```bash
+npm run build    # vinext build → dist/
+npm run deploy   # vinext-cloudflare deploy (needs: npx wrangler login)
+```
+
+The site URL lives in `.env.production`
+(`NEXT_PUBLIC_SITE_URL=https://sun-volt-test1.aleppo-test-website.workers.dev`).
+
+## Cloudflare dashboard (Git integration)
+
+- Build command:  `npm run build`
+- Deploy command: `npm run deploy`
+- Worker name in `wrangler.jsonc` must match the dashboard Worker name.
