@@ -7,7 +7,7 @@ body {
 
 /* Consistent focus rings for accessibility. */
 *:focus-visible {
-  @apply outline-none ring-2 ring-orange-400 ring-offset-2;
+  @apply outline-none ring-2 ring-amber-400 ring-offset-2;
 }
 
 /* Tailwind v3 preflight removes pointer cursors from buttons — restore them
@@ -96,7 +96,7 @@ html[lang="ar"] body {
   }
 }
 .hero-gradient {
-  background: linear-gradient(120deg, #ffedd5, #fff7ed, #f8fafc, #ffedd5);
+  background: linear-gradient(120deg, #fef3c7, #fffbeb, #f8fafc, #fef3c7);
   background-size: 250% 250%;
   animation: gradient-shift 16s ease infinite;
 }
@@ -240,5 +240,33 @@ html[lang="ar"] body {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   System color scheme
+   The whole site follows the user's OS preference (light / dark / high
+   contrast…) automatically — no toggle needed. `color-scheme` also makes
+   native form controls and scrollbars match the scheme.
+--------------------------------------------------------------------------- */
+:root {
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #020617; /* slate-950 */
+    color: #e2e8f0;            /* slate-200 */
+  }
+
+  /* The hero swaps to a deep navy gradient in dark mode. */
+  .hero-gradient {
+    background: linear-gradient(120deg, #0f172a, #1e293b, #1e1b4b, #0f172a);
+    background-size: 250% 250%;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #64748b; /* slate-500 */
   }
 }

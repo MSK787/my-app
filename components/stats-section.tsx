@@ -89,7 +89,7 @@ export default function StatsSection() {
     <Reveal>
       <section
         aria-label={t("home.statsLabel")}
-        className="rounded-3xl bg-slate-900 px-6 py-10 sm:py-12"
+        className="rounded-3xl bg-slate-900 dark:bg-slate-800 px-6 py-10 sm:py-12"
       >
         <div className="grid grid-cols-2 gap-8 text-center md:grid-cols-4">
           {stats.map((stat) => (

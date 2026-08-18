@@ -101,14 +101,14 @@ export default function DealOfWeek() {
 
   return (
     <Reveal>
-      <section className="overflow-hidden rounded-3xl border border-orange-200 bg-gradient-to-br from-orange-50 via-white to-orange-50">
+      <section className="overflow-hidden rounded-3xl border border-amber-200 dark:border-amber-500/30 bg-gradient-to-br from-amber-50 dark:from-slate-900 via-white dark:via-slate-900 to-amber-50 dark:to-slate-800">
         <div className="grid gap-8 p-6 sm:p-10 lg:grid-cols-2 lg:items-center">
           {/* Copy + countdown */}
           <div>
-            <p className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-1.5 text-xs font-bold text-white">
+            <p className="inline-flex items-center gap-2 rounded-full bg-slate-900 dark:bg-amber-500 px-4 py-1.5 text-xs font-bold text-white dark:text-slate-900">
               <span aria-hidden>⚡</span> {t("home.dealBadge")}
             </p>
-            <h2 className="mt-4 text-2xl font-bold text-slate-900 sm:text-3xl">
+            <h2 className="mt-4 text-2xl font-bold text-slate-900 dark:text-slate-100 sm:text-3xl">
               {deal.name}
             </h2>
 
@@ -117,11 +117,11 @@ export default function DealOfWeek() {
                 {formatPrice(deal.price)}
               </p>
               {deal.compareAtPrice && (
-                <p className="text-lg text-slate-500 line-through">
+                <p className="text-lg text-slate-500 dark:text-slate-400 line-through">
                   {formatPrice(deal.compareAtPrice)}
                 </p>
               )}
-              <span className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-sm font-bold text-emerald-700">
+              <span className="rounded-full border border-emerald-200 dark:border-emerald-900 bg-emerald-50 dark:bg-emerald-950/40 px-3 py-1 text-sm font-bold text-emerald-700">
                 {t("home.dealSave", {
                   amount: formatPrice(saved),
                   percent,
@@ -137,7 +137,7 @@ export default function DealOfWeek() {
               {TIME_CELLS.map((cell) => (
                 <div
                   key={cell.unit}
-                  className="w-16 rounded-xl border border-slate-200 bg-white py-2 text-center shadow-sm"
+                  className="w-16 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-2 text-center shadow-sm"
                 >
                   <p className="text-xl font-bold tabular-nums text-slate-900">
                     {parts[cell.unit] === null
@@ -155,11 +155,11 @@ export default function DealOfWeek() {
             <div className="mt-7 flex flex-wrap gap-3">
               <AddToCartButton
                 product={deal}
-                className="rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-700 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40"
+                className="rounded-full bg-slate-900 dark:bg-amber-500 px-6 py-3 text-sm font-semibold text-white dark:text-slate-900 transition hover:bg-amber-700 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40"
               />
               <Link
                 href={`/products/${deal.slug}`}
-                className="rounded-full border border-slate-900 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-orange-500 hover:text-orange-700 active:scale-[0.98]"
+                className="rounded-full border border-slate-900 px-6 py-3 text-sm font-semibold text-slate-900 dark:text-slate-100 transition hover:border-amber-500 hover:text-amber-700 dark:hover:text-amber-400 active:scale-[0.98]"
               >
                 {t("home.dealCta")}
               </Link>
@@ -175,7 +175,7 @@ export default function DealOfWeek() {
           {/* Image with discount badge */}
           <Link
             href={`/products/${deal.slug}`}
-            className="group relative block aspect-[4/3] overflow-hidden rounded-2xl bg-slate-100 shadow-lg shadow-orange-100"
+            className="group relative block aspect-[4/3] overflow-hidden rounded-2xl bg-slate-100 dark:bg-slate-800/60 shadow-lg shadow-amber-100"
           >
             <Image
               src={deal.image}
@@ -184,7 +184,7 @@ export default function DealOfWeek() {
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover transition duration-500 group-hover:scale-105"
             />
-            <span className="absolute start-4 top-4 rounded-full bg-slate-900 px-4 py-1.5 text-sm font-extrabold text-white shadow">
+            <span className="absolute start-4 top-4 rounded-full bg-slate-900 dark:bg-amber-500 px-4 py-1.5 text-sm font-extrabold text-white dark:text-slate-900 shadow">
               -{percent}%
             </span>
           </Link>

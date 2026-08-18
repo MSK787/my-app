@@ -23,18 +23,18 @@ export default function FaqAccordion() {
         {ITEMS.map((id) => (
           <details
             key={id}
-            className="group rounded-2xl border border-slate-200 bg-white transition open:border-orange-300"
+            className="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 transition open:border-amber-300"
           >
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-sm font-semibold text-slate-900 [&::-webkit-details-marker]:hidden">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-sm font-semibold text-slate-900 dark:text-slate-100 [&::-webkit-details-marker]:hidden">
               {t(`faq.${id}.q`)}
               <span
                 aria-hidden
-                className="shrink-0 text-slate-500 transition-transform group-open:rotate-180"
+                className="shrink-0 text-slate-500 dark:text-slate-400 transition-transform group-open:rotate-180"
               >
                 ▾
               </span>
             </summary>
-            <p className="border-t border-slate-100 px-5 py-4 text-sm leading-6 text-slate-600">
+            <p className="border-t border-slate-100 dark:border-slate-800 px-5 py-4 text-sm leading-6 text-slate-600">
               {t(`faq.${id}.a`)}
             </p>
           </details>
