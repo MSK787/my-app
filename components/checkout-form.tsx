@@ -34,7 +34,7 @@ export default function CheckoutForm() {
 
   if (placed) {
     return (
-      <div className="rounded-2xl border border-emerald-200 dark:border-emerald-900 bg-emerald-50 dark:bg-emerald-950/40 p-8 text-center">
+      <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-8 text-center">
         <p className="text-3xl" aria-hidden>
           🎉
         </p>
@@ -44,7 +44,7 @@ export default function CheckoutForm() {
         <p className="mt-1 text-sm text-emerald-700">{t("checkout.placedNote")}</p>
         <Link
           href="/products"
-          className="mt-4 inline-block rounded-full bg-slate-900 dark:bg-amber-500 px-6 py-2.5 text-sm font-semibold text-white dark:text-slate-900 transition hover:bg-amber-700"
+          className="mt-4 inline-block rounded-full bg-slate-900 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-orange-700"
         >
           {t("checkout.keepShopping")}
         </Link>
@@ -64,7 +64,7 @@ export default function CheckoutForm() {
             name="firstName"
             required
             placeholder={t("form.firstName")}
-            className="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 px-4 py-2.5 text-sm outline-none focus:border-amber-500"
+            className="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-orange-500"
           />
         </label>
         <label className="block">
@@ -76,7 +76,7 @@ export default function CheckoutForm() {
             name="lastName"
             required
             placeholder={t("form.lastName")}
-            className="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 px-4 py-2.5 text-sm outline-none focus:border-amber-500"
+            className="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-orange-500"
           />
         </label>
       </div>
@@ -88,7 +88,7 @@ export default function CheckoutForm() {
           name="email"
           required
           placeholder="you@example.com"
-          className="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 px-4 py-2.5 text-sm outline-none focus:border-amber-500"
+          className="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-orange-500"
         />
       </label>
 
@@ -99,7 +99,7 @@ export default function CheckoutForm() {
           name="address"
           required
           placeholder={t("form.address")}
-          className="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 px-4 py-2.5 text-sm outline-none focus:border-amber-500"
+          className="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-orange-500"
         />
       </label>
 
@@ -111,7 +111,7 @@ export default function CheckoutForm() {
             name="city"
             required
             placeholder={t("form.city")}
-            className="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 px-4 py-2.5 text-sm outline-none focus:border-amber-500"
+            className="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-orange-500"
           />
         </label>
         <label className="block">
@@ -123,14 +123,14 @@ export default function CheckoutForm() {
             name="postalCode"
             required
             placeholder="1011 AB"
-            className="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 px-4 py-2.5 text-sm outline-none focus:border-amber-500"
+            className="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-orange-500"
           />
         </label>
         <label className="block">
           <span className="text-sm font-medium text-slate-700">{t("form.country")}</span>
           <select
             name="country"
-            className="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-2.5 text-sm outline-none focus:border-amber-500"
+            className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm outline-none focus:border-orange-500"
           >
             {COUNTRY_KEYS.map((key) => (
               <option key={key}>{t(key)}</option>
@@ -139,14 +139,14 @@ export default function CheckoutForm() {
         </label>
       </div>
 
-      <div className="flex items-center justify-between rounded-2xl border border-amber-200 dark:border-amber-500/30 bg-amber-50 dark:bg-amber-950/40 p-4">
-        <p className="text-sm font-medium text-amber-900">{t("checkout.orderTotal")}</p>
-        <p className="text-lg font-bold text-amber-900">{formatPrice(total)}</p>
+      <div className="flex items-center justify-between rounded-2xl border border-orange-200 bg-orange-50 p-4">
+        <p className="text-sm font-medium text-orange-900">{t("checkout.orderTotal")}</p>
+        <p className="text-lg font-bold text-orange-900">{formatPrice(total)}</p>
       </div>
 
       <button
         type="submit"
-        className="w-full rounded-full bg-slate-900 dark:bg-amber-500 py-3 text-sm font-semibold text-white dark:text-slate-900 transition hover:bg-amber-700"
+        className="w-full rounded-full bg-slate-900 py-3 text-sm font-semibold text-white transition hover:bg-orange-700"
       >
         {t("checkout.placeOrder")}
       </button>

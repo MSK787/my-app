@@ -25,8 +25,8 @@ export default function CategoryBar({
         href="/products"
         className={`whitespace-nowrap rounded-full border px-4 py-2 text-sm font-medium transition ${
           !activeCategory
-            ? "border-slate-900 dark:border-amber-500 bg-slate-900 dark:bg-amber-500 text-white dark:text-slate-900"
-            : "border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:border-slate-400"
+            ? "border-slate-900 bg-slate-900 text-white"
+            : "border-slate-200 text-slate-600 hover:border-slate-400"
         }`}
       >
         {t("common.all")}
@@ -40,8 +40,8 @@ export default function CategoryBar({
             href={`/products?category=${category.id}`}
             className={`whitespace-nowrap rounded-full border px-4 py-2 text-sm font-medium transition ${
               isActive
-                ? "border-slate-900 dark:border-amber-500 bg-slate-900 dark:bg-amber-500 text-white dark:text-slate-900"
-                : "border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:border-slate-400"
+                ? "border-slate-900 bg-slate-900 text-white"
+                : "border-slate-200 text-slate-600 hover:border-slate-400"
             }`}
           >
             {getCategoryLabel(category.id, lang)}

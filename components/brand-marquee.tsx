@@ -30,7 +30,7 @@ export default function BrandMarquee() {
   return (
     <section
       aria-label={t("home.brandsTitle")}
-      className="border-y border-slate-800 bg-slate-900 dark:bg-slate-800 py-5"
+      className="border-y border-slate-800 bg-slate-900 py-5"
     >
       <div className="marquee">
         <div className="marquee-track gap-10">
@@ -39,7 +39,7 @@ export default function BrandMarquee() {
               key={`${brand}-${index}`}
               className="flex items-center gap-3 whitespace-nowrap text-sm font-semibold uppercase tracking-widest text-slate-400"
             >
-              <span aria-hidden className="text-amber-500">
+              <span aria-hidden className="text-orange-500">
                 ✦
               </span>
               {brand}

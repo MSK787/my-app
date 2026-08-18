@@ -77,7 +77,7 @@ export default function CheckoutContent() {
         <p className="mt-2 text-sm text-slate-500">{t("checkout.nothingHint")}</p>
         <Link
           href="/products"
-          className="mt-6 inline-block rounded-full bg-slate-900 dark:bg-amber-500 px-6 py-3 text-sm font-semibold text-white dark:text-slate-900 transition hover:bg-amber-700"
+          className="mt-6 inline-block rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-700"
         >
           {t("checkout.goShopping")}
         </Link>
@@ -92,7 +92,7 @@ export default function CheckoutContent() {
 
       <div className="mt-8 grid gap-10 lg:grid-cols-2">
         {/* Shipping / contact form */}
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+        <div className="rounded-2xl border border-slate-200 p-6">
           <h2 className="text-lg font-semibold text-slate-900">
             {t("checkout.shippingDetails")}
           </h2>
@@ -102,7 +102,7 @@ export default function CheckoutContent() {
         </div>
 
         {/* Order summary */}
-        <aside className="h-fit rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 p-6">
+        <aside className="h-fit rounded-2xl border border-slate-200 bg-slate-50 p-6">
           <h2 className="text-lg font-semibold text-slate-900">
             {t("checkout.yourOrder")}
           </h2>
@@ -138,7 +138,7 @@ export default function CheckoutContent() {
             })}
           </ul>
 
-          <dl className="mt-6 space-y-2 border-t border-slate-200 dark:border-slate-800 pt-4 text-sm">
+          <dl className="mt-6 space-y-2 border-t border-slate-200 pt-4 text-sm">
             <div className="flex justify-between">
               <dt className="text-slate-500">{t("cart.subtotal")}</dt>
               <dd className="font-semibold text-slate-900">
@@ -151,7 +151,7 @@ export default function CheckoutContent() {
                 {shipping === 0 ? t("cart.free") : formatPrice(shipping)}
               </dd>
             </div>
-            <div className="flex justify-between border-t border-slate-200 dark:border-slate-800 pt-3 text-base">
+            <div className="flex justify-between border-t border-slate-200 pt-3 text-base">
               <dt className="font-semibold text-slate-900">{t("cart.total")}</dt>
               <dd className="font-bold text-slate-900">{formatPrice(total)}</dd>
             </div>

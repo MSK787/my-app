@@ -40,12 +40,12 @@ export default function StoreToolbar({
             name="query"
             defaultValue={query}
             placeholder={t("store.searchPlaceholder")}
-            className="w-full rounded-full border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 py-2.5 ps-5 pe-12 text-sm outline-none transition focus:border-amber-500 focus:bg-white"
+            className="w-full rounded-full border border-slate-300 bg-slate-50 py-2.5 ps-5 pe-12 text-sm outline-none transition focus:border-orange-500 focus:bg-white"
           />
           <button
             type="submit"
             aria-label={t("common.search")}
-            className="absolute end-1.5 top-1/2 grid h-8 w-8 -translate-y-1/2 place-items-center rounded-full bg-amber-500 text-sm text-slate-900 dark:text-slate-100 transition hover:bg-amber-600"
+            className="absolute end-1.5 top-1/2 grid h-8 w-8 -translate-y-1/2 place-items-center rounded-full bg-orange-500 text-sm text-slate-900 transition hover:bg-orange-600"
           >
             🔍
           </button>
@@ -65,7 +65,7 @@ export default function StoreToolbar({
           id="sort"
           name="sort"
           defaultValue={sort}
-          className="rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm outline-none focus:border-amber-500"
+          className="rounded-full border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-orange-500"
         >
           <option value="featured">{t("common.sortFeatured")}</option>
           <option value="price-asc">{t("common.sortPriceAsc")}</option>
@@ -73,7 +73,7 @@ export default function StoreToolbar({
         </select>
         <button
           type="submit"
-          className="rounded-full bg-slate-100 dark:bg-slate-800/60 px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 transition hover:bg-amber-100"
+          className="rounded-full bg-slate-100 px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-orange-100"
         >
           {t("common.apply")}
         </button>
@@ -87,11 +87,11 @@ export default function StoreToolbar({
         <span
           aria-hidden
           className={`grid h-5 w-9 items-center rounded-full p-0.5 transition ${
-            stockOnly ? "bg-amber-500" : "bg-slate-300"
+            stockOnly ? "bg-orange-500" : "bg-slate-300"
           }`}
         >
           <span
-            className={`h-4 w-4 rounded-full bg-white dark:bg-slate-900 transition ${
+            className={`h-4 w-4 rounded-full bg-white transition ${
               stockOnly ? "translate-x-4 rtl:-translate-x-4" : ""
             }`}
           />

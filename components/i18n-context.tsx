@@ -408,10 +408,6 @@ const STRINGS: Record<string, { en: string; ar: string }> = {
   "time.hours": { en: "Hours", ar: "ساعة" },
   "time.minutes": { en: "Minutes", ar: "دقيقة" },
   "time.seconds": { en: "Seconds", ar: "ثانية" },
-  "scheme.label": { en: "Color scheme", ar: "المظهر اللوني" },
-  "scheme.system": { en: "System", ar: "النظام" },
-  "scheme.light": { en: "Light", ar: "فاتح" },
-  "scheme.dark": { en: "Dark", ar: "داكن" },
   "faq.title": { en: "Frequently asked questions", ar: "الأسئلة الشائعة" },
   "faq.hint": {
     en: "Quick answers before you ask us anything.",

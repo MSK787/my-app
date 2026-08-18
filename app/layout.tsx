@@ -7,6 +7,7 @@ import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import CartToast from "@/components/cart-toast";
 import FloatingActions from "@/components/floating-actions";
+import Script from "next/script";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#f59e0b",
+  themeColor: "#f05b21",
 };
 
 /**
@@ -60,22 +61,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="flex min-h-screen flex-col" suppressHydrationWarning>
-        {/* Apply the saved language/direction BEFORE first paint, so Arabic
-            users never see a right-to-left layout flash. The i18n provider
-            reads the same localStorage key and agrees with this value. */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html:
-              "try{var l=localStorage.getItem('sunvolt-lang');if(!l){l=(navigator.language||'').toLowerCase().indexOf('ar')===0?'ar':'en';}if(l==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl';}}catch(e){}",
-          }}
-        />
-        {/* Apply the saved color scheme BEFORE first paint (no flash). */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html:
-              "try{var s=localStorage.getItem('sunvolt-scheme')||'system';var d=s==='dark'||(s==='system'&&window.matchMedia('(prefers-color-scheme: dark)').matches);if(d)document.documentElement.classList.add('dark');document.documentElement.style.colorScheme=d?'dark':'light';}catch(e){}",
-          }}
-        />
+        {/* Pre-paint scripts: language/dir + color scheme. beforeInteractive runs them before hydration, so there is never a flash. */}
+        <Script id="lang-paint" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: "try{var l=localStorage.getItem('sunvolt-lang');if(!l){l=(navigator.language||'').toLowerCase().indexOf('ar')===0?'ar':'en';}if(l==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl';}}catch(e){}" }} />
+        <Script id="scheme-paint" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: "try{var s=localStorage.getItem('sunvolt-scheme')||'system';var d=s==='dark'||(s==='system'&&window.matchMedia('(prefers-color-scheme: dark)').matches);if(d)document.documentElement.classList.add('dark');document.documentElement.style.colorScheme=d?'dark':'light';}catch(e){}" }} />
         <I18nProvider>
           <CartProvider>
             <SiteHeader />

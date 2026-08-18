@@ -22,7 +22,7 @@ export default function ContactForm() {
 
   if (sent) {
     return (
-      <div className="rounded-2xl border border-emerald-200 dark:border-emerald-900 bg-emerald-50 dark:bg-emerald-950/40 p-8 text-center">
+      <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-8 text-center">
         <p className="text-3xl" aria-hidden>
           ✅
         </p>
@@ -44,7 +44,7 @@ export default function ContactForm() {
             name="name"
             required
             placeholder={t("form.name")}
-            className="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 px-4 py-2.5 text-sm outline-none focus:border-amber-500"
+            className="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-orange-500"
           />
         </label>
         <label className="block">
@@ -54,7 +54,7 @@ export default function ContactForm() {
             name="email"
             required
             placeholder="you@example.com"
-            className="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 px-4 py-2.5 text-sm outline-none focus:border-amber-500"
+            className="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-orange-500"
           />
         </label>
       </div>
@@ -63,7 +63,7 @@ export default function ContactForm() {
         <span className="text-sm font-medium text-slate-700">{t("form.subject")}</span>
         <select
           name="subject"
-          className="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-2.5 text-sm outline-none focus:border-amber-500"
+          className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm outline-none focus:border-orange-500"
         >
           {SUBJECT_KEYS.map((key) => (
             <option key={key}>{t(key)}</option>
@@ -78,13 +78,13 @@ export default function ContactForm() {
           required
           rows={5}
           placeholder={t("form.message")}
-          className="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 px-4 py-2.5 text-sm outline-none focus:border-amber-500"
+          className="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-orange-500"
         />
       </label>
 
       <button
         type="submit"
-        className="rounded-full bg-slate-900 dark:bg-amber-500 px-6 py-2.5 text-sm font-semibold text-white dark:text-slate-900 transition hover:bg-amber-700"
+        className="rounded-full bg-slate-900 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-orange-700"
       >
         {t("form.send")}
       </button>
