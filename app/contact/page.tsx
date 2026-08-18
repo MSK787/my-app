@@ -7,7 +7,7 @@ import ContactContent from "./contact-content";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: "Get in touch with the SunVolt team.",
+  description: "Get in touch with the Aleppo Power team.",
   alternates: { canonical: "/contact" },
 };
 

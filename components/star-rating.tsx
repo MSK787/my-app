@@ -20,7 +20,7 @@ export default function StarRating({
       className="flex items-center gap-1.5"
       aria-label={t("common.rated", { rating })}
     >
-      <span className="text-sm tracking-tight text-amber-500" aria-hidden>
+      <span className="text-sm tracking-tight text-orange-500" aria-hidden>
         {STARS.map((star) => (
           <span
             key={star}

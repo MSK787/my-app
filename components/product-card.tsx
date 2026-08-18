@@ -43,7 +43,7 @@ export default function ProductCard({ product }: { product: Product }) {
 
           {/* Ribbon badge */}
           {product.badge && (
-            <span className="absolute start-3 top-3 rounded-full bg-amber-500 px-3 py-1 text-xs font-bold text-slate-900 shadow">
+            <span className="absolute start-3 top-3 rounded-full bg-orange-500 px-3 py-1 text-xs font-bold text-slate-900 shadow">
               {product.badge}
             </span>
           )}
@@ -59,7 +59,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <button
             type="button"
             onClick={() => setQuickViewOpen(true)}
-            className="absolute inset-x-3 bottom-3 rounded-full bg-white/95 py-2 text-xs font-semibold text-slate-900 opacity-0 shadow transition hover:text-amber-700 group-hover:opacity-100 focus-visible:opacity-100"
+            className="absolute inset-x-3 bottom-3 rounded-full bg-white/95 py-2 text-xs font-semibold text-slate-900 opacity-0 shadow transition hover:text-orange-700 group-hover:opacity-100 focus-visible:opacity-100"
           >
             {t("common.quickView")}
           </button>
@@ -71,7 +71,7 @@ export default function ProductCard({ product }: { product: Product }) {
             {getCategoryLabel(product.category, lang)}
           </p>
           <Link href={`/products/${product.slug}`}>
-            <h2 className="line-clamp-2 text-sm font-semibold leading-snug text-slate-900 hover:text-amber-700">
+            <h2 className="line-clamp-2 text-sm font-semibold leading-snug text-slate-900 hover:text-orange-700">
               {product.name}
             </h2>
           </Link>
@@ -102,7 +102,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <div className="mt-auto flex items-center gap-2 pt-2">
             <AddToCartButton
               product={product}
-              className="flex-1 rounded-full bg-slate-900 px-3 py-2 text-xs font-semibold text-white transition hover:bg-amber-700 disabled:cursor-not-allowed disabled:opacity-40"
+              className="flex-1 rounded-full bg-slate-900 px-3 py-2 text-xs font-semibold text-white transition hover:bg-orange-700 disabled:cursor-not-allowed disabled:opacity-40"
             />
             <WhatsAppButton
               product={product}

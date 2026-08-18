@@ -71,7 +71,7 @@ function NavUnderline({ active }: { active: boolean }) {
   return (
     <span
       aria-hidden
-      className={`absolute inset-x-3 bottom-1 h-0.5 origin-left rounded-full bg-amber-500 transition-transform duration-300 ease-out rtl:origin-right ${
+      className={`absolute inset-x-3 bottom-1 h-0.5 origin-left rounded-full bg-orange-500 transition-transform duration-300 ease-out rtl:origin-right ${
         active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
       }`}
     />
@@ -135,7 +135,7 @@ function ShopDropdown({ isActive }: { isActive: boolean }) {
         aria-haspopup="menu"
         aria-current={isActive ? "page" : undefined}
         className={`relative flex items-center gap-1 px-4 py-3 text-sm font-medium transition ${
-          isActive ? "text-amber-700" : "text-slate-700 hover:text-amber-700"
+          isActive ? "text-orange-700" : "text-slate-700 hover:text-orange-700"
         }`}
       >
         {t("nav.shop")}
@@ -174,7 +174,7 @@ function ShopDropdown({ isActive }: { isActive: boolean }) {
                       <Link
                         href={`/products?category=${category.id}`}
                         onClick={close}
-                        className="group/item flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-slate-600 transition hover:bg-amber-50 hover:text-amber-800"
+                        className="group/item flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-slate-600 transition hover:bg-orange-50 hover:text-orange-800"
                       >
                         <span
                           aria-hidden
@@ -204,7 +204,7 @@ function ShopDropdown({ isActive }: { isActive: boolean }) {
                         <Link
                           href={`/products?filter=${filter.id}`}
                           onClick={close}
-                          className="block rounded-lg px-3 py-1.5 text-sm text-slate-600 transition hover:bg-amber-50 hover:text-amber-800"
+                          className="block rounded-lg px-3 py-1.5 text-sm text-slate-600 transition hover:bg-orange-50 hover:text-orange-800"
                         >
                           {t(quickFilterLabelKey(filter.id))}
                         </Link>
@@ -214,7 +214,7 @@ function ShopDropdown({ isActive }: { isActive: boolean }) {
                       <Link
                         href="/products"
                         onClick={close}
-                        className="block rounded-lg px-3 py-1.5 text-sm text-slate-600 transition hover:bg-amber-50 hover:text-amber-800"
+                        className="block rounded-lg px-3 py-1.5 text-sm text-slate-600 transition hover:bg-orange-50 hover:text-orange-800"
                       >
                         {t("header.allProducts")}
                       </Link>
@@ -228,7 +228,7 @@ function ShopDropdown({ isActive }: { isActive: boolean }) {
                     <Link
                       href={`/products/${featured.slug}`}
                       onClick={close}
-                      className="group/card flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-3 transition hover:border-amber-300 hover:bg-amber-50"
+                      className="group/card flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-3 transition hover:border-orange-300 hover:bg-orange-50"
                     >
                       <span className="relative block h-14 w-14 shrink-0 overflow-hidden rounded-xl bg-white">
                         <Image
@@ -243,7 +243,7 @@ function ShopDropdown({ isActive }: { isActive: boolean }) {
                         <span className="block truncate text-sm font-semibold text-slate-900">
                           {featured.name}
                         </span>
-                        <span className="block text-sm font-bold text-amber-700">
+                        <span className="block text-sm font-bold text-orange-700">
                           {formatPrice(featured.price)}
                         </span>
                       </span>
@@ -260,7 +260,7 @@ function ShopDropdown({ isActive }: { isActive: boolean }) {
                 <Link
                   href="/products"
                   onClick={close}
-                  className="mt-auto inline-block rounded-full bg-slate-900 px-5 py-2.5 text-center text-xs font-semibold text-white transition hover:bg-amber-700 active:scale-[0.98]"
+                  className="mt-auto inline-block rounded-full bg-slate-900 px-5 py-2.5 text-center text-xs font-semibold text-white transition hover:bg-orange-700 active:scale-[0.98]"
                 >
                   {t("header.viewAll")}
                 </Link>
@@ -297,12 +297,12 @@ export default function SiteHeader() {
             {t("topbar.freeShipping", { amount: `$${FREE_SHIPPING_THRESHOLD}` })}
           </p>
           <div className="flex items-center gap-5">
-            <a href={SITE.phoneHref} className="transition hover:text-amber-400">
+            <a href={SITE.phoneHref} className="transition hover:text-orange-400">
               📞 {SITE.phone}
             </a>
             <a
               href={`mailto:${SITE.email}`}
-              className="transition hover:text-amber-400"
+              className="transition hover:text-orange-400"
             >
               📧 {SITE.email}
             </a>
@@ -326,11 +326,15 @@ export default function SiteHeader() {
             href="/"
             className="flex items-center gap-2 transition hover:opacity-90 active:scale-[0.98]"
           >
-            <span className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-amber-400 to-orange-500 text-lg shadow-sm shadow-amber-200">
-              ☀️
-            </span>
+            <img
+              src="/images/logo.png"
+              alt="Aleppo Power"
+              width={40}
+              height={40}
+              className="h-10 w-10 rounded-lg"
+            />
             <span className="text-xl font-bold tracking-tight text-slate-900">
-              Sun<span className="text-amber-600">Volt</span>
+              Aleppo<span className="text-[#f05b21]">Power</span>
             </span>
           </Link>
 
@@ -345,12 +349,12 @@ export default function SiteHeader() {
                 type="text"
                 name="query"
                 placeholder={t("header.searchPlaceholder")}
-                className="w-full rounded-full border border-slate-300 bg-slate-50 py-2.5 ps-5 pe-12 text-sm shadow-sm outline-none transition focus:border-amber-500 focus:bg-white focus:shadow-md"
+                className="w-full rounded-full border border-slate-300 bg-slate-50 py-2.5 ps-5 pe-12 text-sm shadow-sm outline-none transition focus:border-orange-500 focus:bg-white focus:shadow-md"
               />
               <button
                 type="submit"
                 aria-label={t("common.search")}
-                className="absolute end-1.5 top-1/2 grid h-8 w-8 -translate-y-1/2 place-items-center rounded-full bg-amber-500 text-sm text-slate-900 transition hover:bg-amber-600 active:scale-95"
+                className="absolute end-1.5 top-1/2 grid h-8 w-8 -translate-y-1/2 place-items-center rounded-full bg-orange-500 text-sm text-slate-900 transition hover:bg-orange-600 active:scale-95"
               >
                 🔍
               </button>
@@ -364,7 +368,7 @@ export default function SiteHeader() {
             {/* Cart (icon wiggles on hover) */}
             <Link
               href="/cart"
-              className="cart-bump relative flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-amber-400 hover:text-amber-700 active:scale-[0.98]"
+              className="cart-bump relative flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-orange-400 hover:text-orange-700 active:scale-[0.98]"
             >
               <span aria-hidden className="cart-bump-icon inline-block">
                 🛒
@@ -373,7 +377,7 @@ export default function SiteHeader() {
               {itemCount > 0 && (
                 <span
                   key={itemCount}
-                  className="animate-badge-pop absolute -end-1.5 -top-1.5 grid h-5 min-w-5 place-items-center rounded-full bg-amber-500 px-1 text-xs font-bold text-slate-900"
+                  className="animate-badge-pop absolute -end-1.5 -top-1.5 grid h-5 min-w-5 place-items-center rounded-full bg-orange-500 px-1 text-xs font-bold text-slate-900"
                 >
                   {itemCount}
                 </span>
@@ -387,7 +391,7 @@ export default function SiteHeader() {
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
               aria-label={t("header.toggleMenu")}
-              className="grid h-10 w-10 place-items-center rounded-full border border-slate-200 text-lg text-slate-700 transition hover:border-amber-400 hover:text-amber-700 active:scale-95 md:hidden"
+              className="grid h-10 w-10 place-items-center rounded-full border border-slate-200 text-lg text-slate-700 transition hover:border-orange-400 hover:text-orange-700 active:scale-95 md:hidden"
             >
               {menuOpen ? "✕" : "☰"}
             </button>
@@ -413,8 +417,8 @@ export default function SiteHeader() {
                   aria-current={isActive ? "page" : undefined}
                   className={`group relative px-4 py-3 text-sm font-medium transition ${
                     isActive
-                      ? "text-amber-700"
-                      : "text-slate-700 hover:text-amber-700"
+                      ? "text-orange-700"
+                      : "text-slate-700 hover:text-orange-700"
                   }`}
                 >
                   {t(link.labelKey)}
@@ -440,12 +444,12 @@ export default function SiteHeader() {
                 type="text"
                 name="query"
                 placeholder={t("header.searchPlaceholder")}
-                className="w-full rounded-full border border-slate-300 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-amber-500"
+                className="w-full rounded-full border border-slate-300 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-orange-500"
               />
               <button
                 type="submit"
                 aria-label={t("common.search")}
-                className="rounded-full bg-amber-500 px-4 text-sm text-slate-900"
+                className="rounded-full bg-orange-500 px-4 text-sm text-slate-900"
               >
                 🔍
               </button>
@@ -458,7 +462,7 @@ export default function SiteHeader() {
                   <Link
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-amber-50 hover:text-amber-700"
+                    className="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-orange-50 hover:text-orange-700"
                   >
                     {t(link.labelKey)}
                     <span
@@ -483,7 +487,7 @@ export default function SiteHeader() {
                     <Link
                       href={`/products?category=${category.id}`}
                       onClick={() => setMenuOpen(false)}
-                      className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-amber-50 hover:text-amber-700"
+                      className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-orange-50 hover:text-orange-700"
                     >
                       <span aria-hidden>{CATEGORY_EMOJIS[category.id]}</span>
                       {category.name}

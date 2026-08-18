@@ -37,7 +37,7 @@ export default function StoreGrid({ products }: { products: Product[] }) {
         <p className="mt-1 text-sm text-slate-500">{t("common.noResultsHint")}</p>
         <Link
           href="/products"
-          className="mt-4 inline-block rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition hover:bg-amber-700"
+          className="mt-4 inline-block rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition hover:bg-orange-700"
         >
           {t("common.clearFilters")}
         </Link>
@@ -120,7 +120,7 @@ function ListRow({ product }: { product: Product }) {
           {getCategoryLabel(product.category, lang)}
         </p>
         <Link href={`/products/${product.slug}`}>
-          <h2 className="mt-0.5 text-sm font-semibold text-slate-900 hover:text-amber-700 sm:text-base">
+          <h2 className="mt-0.5 text-sm font-semibold text-slate-900 hover:text-orange-700 sm:text-base">
             {product.name}
           </h2>
         </Link>
@@ -145,7 +145,7 @@ function ListRow({ product }: { product: Product }) {
           <div className="flex items-center gap-2">
             <AddToCartButton
               product={product}
-              className="rounded-full bg-slate-900 px-5 py-2 text-xs font-semibold text-white transition hover:bg-amber-700 disabled:cursor-not-allowed disabled:opacity-40"
+              className="rounded-full bg-slate-900 px-5 py-2 text-xs font-semibold text-white transition hover:bg-orange-700 disabled:cursor-not-allowed disabled:opacity-40"
             />
             <WhatsAppButton
               product={product}

@@ -29,7 +29,7 @@ export default function TestimonialsSection() {
               key={id}
               className="flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-200/70"
             >
-              <p className="text-sm tracking-tight text-amber-500" aria-hidden>
+              <p className="text-sm tracking-tight text-orange-500" aria-hidden>
                 ★★★★★
                 <span className="sr-only">5 out of 5 stars</span>
               </p>
@@ -39,7 +39,7 @@ export default function TestimonialsSection() {
               <figcaption className="mt-auto flex items-center gap-3 pt-2">
                 <span
                   aria-hidden
-                  className="grid h-10 w-10 place-items-center rounded-full bg-amber-500 text-sm font-bold text-slate-900"
+                  className="grid h-10 w-10 place-items-center rounded-full bg-orange-500 text-sm font-bold text-slate-900"
                 >
                   {t(`testimonial.${id}.name`).charAt(0)}
                 </span>

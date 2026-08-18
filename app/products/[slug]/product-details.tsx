@@ -70,17 +70,17 @@ export default function ProductDetails({
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
       {/* Breadcrumb */}
       <nav className="text-sm text-slate-500" aria-label="Breadcrumb">
-        <Link href="/" className="hover:text-amber-700">
+        <Link href="/" className="hover:text-orange-700">
           {t("store.home")}
         </Link>
         <span className="mx-2">/</span>
-        <Link href="/products" className="hover:text-amber-700">
+        <Link href="/products" className="hover:text-orange-700">
           {t("store.title")}
         </Link>
         <span className="mx-2">/</span>
         <Link
           href={`/products?category=${product.category}`}
-          className="hover:text-amber-700"
+          className="hover:text-orange-700"
         >
           {getCategoryLabel(product.category, lang)}
         </Link>
@@ -99,7 +99,7 @@ export default function ProductDetails({
             className="object-cover"
           />
           {product.badge && (
-            <span className="absolute start-4 top-4 rounded-full bg-amber-500 px-4 py-1.5 text-sm font-bold text-slate-900 shadow">
+            <span className="absolute start-4 top-4 rounded-full bg-orange-500 px-4 py-1.5 text-sm font-bold text-slate-900 shadow">
               {product.badge}
             </span>
           )}
@@ -140,7 +140,7 @@ export default function ProductDetails({
           <ul className="mt-5 space-y-2">
             {product.highlights.map((highlight) => (
               <li key={highlight} className="flex gap-2 text-sm text-slate-700">
-                <span className="text-amber-600" aria-hidden>
+                <span className="text-orange-600" aria-hidden>
                   ⚡
                 </span>
                 {highlight}
@@ -152,14 +152,14 @@ export default function ProductDetails({
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <AddToCartButton
               product={product}
-              className="rounded-full bg-slate-900 px-8 py-3 text-sm font-semibold text-white transition hover:bg-amber-700 disabled:cursor-not-allowed disabled:opacity-40"
+              className="rounded-full bg-slate-900 px-8 py-3 text-sm font-semibold text-white transition hover:bg-orange-700 disabled:cursor-not-allowed disabled:opacity-40"
             />
             <Link
               href={inStock ? buildBuyNowUrl(product.slug, qty) : "#"}
               aria-disabled={!inStock}
               className={`rounded-full border border-slate-900 px-8 py-3 text-center text-sm font-semibold transition ${
                 inStock
-                  ? "text-slate-900 hover:border-amber-500 hover:text-amber-700"
+                  ? "text-slate-900 hover:border-orange-500 hover:text-orange-700"
                   : "pointer-events-none opacity-40"
               }`}
             >

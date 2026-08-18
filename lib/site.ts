@@ -10,7 +10,7 @@
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://sunvolt.example";
 
 export const SITE = {
-  name: "SunVolt",
+  name: "Aleppo Power",
   /** Public base URL of the store — no trailing slash. */
   origin: BASE_URL,
   /** Phone shown in the top bar and footer. */

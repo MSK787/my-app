@@ -168,7 +168,7 @@ export const products: Product[] = [
   // ---- Inverters ---------------------------------------------------------
   {
     slug: "sunvolt-5kw-hybrid",
-    name: "SunVolt 5kW Hybrid Inverter 48V",
+    name: "Aleppo Power 5kW Hybrid Inverter 48V",
     category: "inverters",
     price: 749,
     compareAtPrice: 829,
@@ -197,7 +197,7 @@ export const products: Product[] = [
   },
   {
     slug: "sunvolt-3kw-offgrid",
-    name: "SunVolt 3kW Off-Grid Inverter 24V",
+    name: "Aleppo Power 3kW Off-Grid Inverter 24V",
     category: "inverters",
     price: 429,
     rating: 4.6,
@@ -222,7 +222,7 @@ export const products: Product[] = [
   },
   {
     slug: "sunvolt-10kw-three-phase",
-    name: "SunVolt 10kW Three-Phase Inverter",
+    name: "Aleppo Power 10kW Three-Phase Inverter",
     category: "inverters",
     price: 1490,
     rating: 4.7,

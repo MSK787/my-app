@@ -12,14 +12,14 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.origin),
   title: {
-    default: "SunVolt — Solar & Electrical Equipment Store",
-    template: "%s | SunVolt",
+    default: "Aleppo Power — Solar & Electrical Equipment Store",
+    template: "%s | Aleppo Power",
   },
   description:
     "Solar panels, inverters, batteries, cables and electrical equipment at fair prices — with expert support.",
   openGraph: {
-    siteName: "SunVolt",
-    title: "SunVolt — Solar & Electrical Equipment Store",
+    siteName: "Aleppo Power",
+    title: "Aleppo Power — Solar & Electrical Equipment Store",
     description:
       "Solar panels, inverters, batteries, cables and electrical equipment at fair prices.",
     type: "website",
@@ -29,13 +29,13 @@ export const metadata: Metadata = {
         url: "/images/panel-mono-550.jpg",
         width: 1024,
         height: 1024,
-        alt: "SunVolt solar panel",
+        alt: "Aleppo Power solar panel",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SunVolt — Solar & Electrical Equipment Store",
+    title: "Aleppo Power — Solar & Electrical Equipment Store",
     description:
       "Solar panels, inverters, batteries, cables and electrical equipment at fair prices.",
     images: ["/images/panel-mono-550.jpg"],
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#f59e0b",
+  themeColor: "#f05b21",
 };
 
 /**

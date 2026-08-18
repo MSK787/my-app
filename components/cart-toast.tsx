@@ -57,7 +57,7 @@ export default function CartToast() {
           </p>
           <Link
             href="/cart"
-            className="text-xs font-semibold text-amber-700 hover:text-amber-800"
+            className="text-xs font-semibold text-orange-700 hover:text-orange-800"
           >
             {t("toast.viewCart")}
           </Link>

@@ -40,7 +40,7 @@ export default function CartPage() {
         <p className="mt-2 text-sm text-slate-500">{t("cart.emptyHint")}</p>
         <Link
           href="/products"
-          className="mt-6 inline-block rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-amber-700"
+          className="mt-6 inline-block rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-700"
         >
           {t("cart.startShopping")}
         </Link>
@@ -60,17 +60,17 @@ export default function CartPage() {
       </h1>
 
       {/* Free shipping progress */}
-      <div className="mt-4 max-w-xl rounded-2xl border border-amber-200 bg-amber-50 p-4">
-        <p className="text-sm font-medium text-amber-900">
+      <div className="mt-4 max-w-xl rounded-2xl border border-orange-200 bg-orange-50 p-4">
+        <p className="text-sm font-medium text-orange-900">
           {shipping === 0
             ? t("cart.unlocked")
             : t("cart.moreForFree", {
                 amount: formatPrice(FREE_SHIPPING_THRESHOLD - subtotal),
               })}
         </p>
-        <div className="mt-2 h-2 overflow-hidden rounded-full bg-amber-200">
+        <div className="mt-2 h-2 overflow-hidden rounded-full bg-orange-200">
           <div
-            className="h-full rounded-full bg-amber-500 transition-all"
+            className="h-full rounded-full bg-orange-500 transition-all"
             style={{ width: `${progressToFreeShipping * 100}%` }}
           />
         </div>
@@ -105,7 +105,7 @@ export default function CartPage() {
                 <div className="flex flex-1 flex-col">
                   <Link
                     href={`/products/${product.slug}`}
-                    className="text-sm font-semibold text-slate-900 hover:text-amber-700"
+                    className="text-sm font-semibold text-slate-900 hover:text-orange-700"
                   >
                     {product.name}
                   </Link>
@@ -121,7 +121,7 @@ export default function CartPage() {
                         onClick={() =>
                           setQuantity(line.productSlug, line.quantity - 1)
                         }
-                        className="px-3 py-1 text-slate-600 transition hover:text-amber-700"
+                        className="px-3 py-1 text-slate-600 transition hover:text-orange-700"
                         aria-label={t("common.decreaseQty", { name: product.name })}
                       >
                         −
@@ -134,7 +134,7 @@ export default function CartPage() {
                         onClick={() =>
                           setQuantity(line.productSlug, line.quantity + 1)
                         }
-                        className="px-3 py-1 text-slate-600 transition hover:text-amber-700"
+                        className="px-3 py-1 text-slate-600 transition hover:text-orange-700"
                         aria-label={t("common.increaseQty", { name: product.name })}
                       >
                         +
@@ -195,13 +195,13 @@ export default function CartPage() {
 
           <Link
             href="/checkout"
-            className="mt-6 block rounded-full bg-slate-900 py-3 text-center text-sm font-semibold text-white transition hover:bg-amber-700"
+            className="mt-6 block rounded-full bg-slate-900 py-3 text-center text-sm font-semibold text-white transition hover:bg-orange-700"
           >
             {t("cart.checkout")}
           </Link>
           <Link
             href="/products"
-            className="mt-3 block text-center text-sm font-medium text-slate-500 hover:text-amber-700"
+            className="mt-3 block text-center text-sm font-medium text-slate-500 hover:text-orange-700"
           >
             {t("cart.continueShopping")}
           </Link>

@@ -38,7 +38,7 @@ export default function QuickBrowseTabs() {
         </div>
         <Link
           href={`/products?filter=${activeTab}`}
-          className="hidden text-sm font-semibold text-amber-700 hover:text-amber-700 sm:block"
+          className="hidden text-sm font-semibold text-orange-700 hover:text-orange-700 sm:block"
         >
           {t("home.viewAll")}
         </Link>

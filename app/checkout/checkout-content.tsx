@@ -77,7 +77,7 @@ export default function CheckoutContent() {
         <p className="mt-2 text-sm text-slate-500">{t("checkout.nothingHint")}</p>
         <Link
           href="/products"
-          className="mt-6 inline-block rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-amber-700"
+          className="mt-6 inline-block rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-700"
         >
           {t("checkout.goShopping")}
         </Link>

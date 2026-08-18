@@ -86,11 +86,11 @@ export default function ContactContent() {
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl border border-amber-200 bg-amber-50 p-8">
-            <h2 className="text-lg font-semibold text-amber-900">
+          <div className="rounded-2xl border border-orange-200 bg-orange-50 p-8">
+            <h2 className="text-lg font-semibold text-orange-900">
               {t("contact.hours")}
             </h2>
-            <p className="mt-2 text-sm text-amber-800">{t("contact.hoursText")}</p>
+            <p className="mt-2 text-sm text-orange-800">{t("contact.hoursText")}</p>
           </div>
         </div>
       </div>

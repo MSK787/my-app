@@ -29,7 +29,7 @@ export default function LanguageSwitcher() {
             className={`px-3 py-1.5 text-xs font-bold transition ${
               isActive
                 ? "bg-slate-900 text-white"
-                : "bg-white text-slate-600 hover:text-amber-700"
+                : "bg-white text-slate-600 hover:text-orange-700"
             }`}
           >
             {option.label}

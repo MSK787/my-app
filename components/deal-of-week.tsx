@@ -101,7 +101,7 @@ export default function DealOfWeek() {
 
   return (
     <Reveal>
-      <section className="overflow-hidden rounded-3xl border border-amber-200 bg-gradient-to-br from-amber-50 via-white to-orange-50">
+      <section className="overflow-hidden rounded-3xl border border-orange-200 bg-gradient-to-br from-orange-50 via-white to-orange-50">
         <div className="grid gap-8 p-6 sm:p-10 lg:grid-cols-2 lg:items-center">
           {/* Copy + countdown */}
           <div>
@@ -155,11 +155,11 @@ export default function DealOfWeek() {
             <div className="mt-7 flex flex-wrap gap-3">
               <AddToCartButton
                 product={deal}
-                className="rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-amber-700 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40"
+                className="rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-700 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40"
               />
               <Link
                 href={`/products/${deal.slug}`}
-                className="rounded-full border border-slate-900 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-amber-500 hover:text-amber-700 active:scale-[0.98]"
+                className="rounded-full border border-slate-900 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-orange-500 hover:text-orange-700 active:scale-[0.98]"
               >
                 {t("home.dealCta")}
               </Link>
@@ -175,7 +175,7 @@ export default function DealOfWeek() {
           {/* Image with discount badge */}
           <Link
             href={`/products/${deal.slug}`}
-            className="group relative block aspect-[4/3] overflow-hidden rounded-2xl bg-slate-100 shadow-lg shadow-amber-100"
+            className="group relative block aspect-[4/3] overflow-hidden rounded-2xl bg-slate-100 shadow-lg shadow-orange-100"
           >
             <Image
               src={deal.image}

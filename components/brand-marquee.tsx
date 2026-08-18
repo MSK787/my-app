@@ -39,7 +39,7 @@ export default function BrandMarquee() {
               key={`${brand}-${index}`}
               className="flex items-center gap-3 whitespace-nowrap text-sm font-semibold uppercase tracking-widest text-slate-400"
             >
-              <span aria-hidden className="text-amber-500">
+              <span aria-hidden className="text-orange-500">
                 ✦
               </span>
               {brand}

@@ -37,20 +37,29 @@ export default function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
         {/* Brand + contact info */}
         <div>
-          <p className="text-lg font-bold text-slate-900">☀️ SunVolt</p>
+          <div className="flex items-center gap-2.5">
+            <img
+              src="/images/logo.png"
+              alt="Aleppo Power"
+              width={44}
+              height={44}
+              className="h-11 w-11 rounded-lg"
+            />
+            <p className="text-lg font-bold text-slate-900">Aleppo Power</p>
+          </div>
           <p className="mt-3 max-w-xs text-sm leading-6 text-slate-600">
             {t("footer.about")}
           </p>
           <ul className="mt-4 space-y-1.5 text-sm text-slate-600">
             <li>
-              <a href={SITE.phoneHref} className="transition hover:text-amber-700">
+              <a href={SITE.phoneHref} className="transition hover:text-orange-700">
                 📞 {SITE.phone}
               </a>
             </li>
             <li>
               <a
                 href={`mailto:${SITE.email}`}
-                className="transition hover:text-amber-700"
+                className="transition hover:text-orange-700"
               >
                 📧 {SITE.email}
               </a>
@@ -80,7 +89,7 @@ export default function SiteFooter() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm text-slate-600 transition hover:text-amber-700"
+                  className="text-sm text-slate-600 transition hover:text-orange-700"
                 >
                   {t(link.labelKey)}
                 </Link>
@@ -99,7 +108,7 @@ export default function SiteFooter() {
               <li key={category.id}>
                 <Link
                   href={`/products?category=${category.id}`}
-                  className="text-sm text-slate-600 transition hover:text-amber-700"
+                  className="text-sm text-slate-600 transition hover:text-orange-700"
                 >
                   {category.name}
                 </Link>

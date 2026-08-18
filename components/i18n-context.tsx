@@ -179,7 +179,7 @@ const STRINGS: Record<string, { en: string; ar: string }> = {
   "checkout.placeOrder": { en: "Place order", ar: "تأكيد الطلب" },
   "checkout.placedTitle": { en: "Order #{order} placed!", ar: "تم تقديم الطلب #{order}!" },
   "checkout.placedNote": {
-    en: "This is a demo checkout — no payment was taken and no order was actually created. Thanks for trying SunVolt!",
+    en: "This is a demo checkout — no payment was taken and no order was actually created. Thanks for trying Aleppo Power!",
     ar: "هذه تجربة تجريبية — لم يتم سحب أي مبلغ ولم يُنشأ طلب فعلي. شكراً لتجربتك صن فولت!",
   },
   "checkout.keepShopping": { en: "Keep shopping", ar: "واصل التسوق" },
@@ -285,7 +285,7 @@ const STRINGS: Record<string, { en: string; ar: string }> = {
   "footer.cart": { en: "Cart", ar: "السلة" },
   "footer.contactUs": { en: "Contact Us", ar: "تواصل معنا" },
   "footer.copyright": {
-    en: "© {year} SunVolt Store — Demo project built with Next.js.",
+    en: "© {year} Aleppo Power — Demo project built with Next.js.",
     ar: "© {year} متجر صن فولت — مشروع تجريبي مبني بـ Next.js.",
   },
 
@@ -505,17 +505,17 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   const originalTitleRef = useRef<string | null>(null);
 
   useEffect(() => {
-    // Capture the per-page English title ONCE (e.g. "Store | SunVolt"),
+    // Capture the per-page English title ONCE (e.g. "Store | Aleppo Power"),
     // so switching back to English can always restore it.
     if (originalTitleRef.current === null) {
       originalTitleRef.current = document.title;
     }
     const originalTitle = originalTitleRef.current;
     if (lang === "ar") {
-      if (originalTitle === "SunVolt — Solar & Electrical Equipment Store") {
-        document.title = "صن فولت — متجر معدات الطاقة الشمسية والكهربائية";
+      if (originalTitle === "Aleppo Power — Solar & Electrical Equipment Store") {
+        document.title = "حلب باور — متجر معدات الطاقة الشمسية والكهربائية";
       } else {
-        document.title = originalTitle.replace(/\s\|\sSunVolt$/, " | صن فولت");
+        document.title = originalTitle.replace(/\s\|\sAleppo Power$/, " | حلب باور");
       }
     } else {
       document.title = originalTitle;

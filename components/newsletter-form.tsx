@@ -36,11 +36,11 @@ export default function NewsletterForm() {
         type="email"
         required
         placeholder={t("newsletter.placeholder")}
-        className="w-full rounded-full border border-slate-300 bg-white px-4 py-2 text-sm outline-none focus:border-amber-500"
+        className="w-full rounded-full border border-slate-300 bg-white px-4 py-2 text-sm outline-none focus:border-orange-500"
       />
       <button
         type="submit"
-        className="shrink-0 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-amber-700"
+        className="shrink-0 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-orange-700"
       >
         {t("newsletter.join")}
       </button>

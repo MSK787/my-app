@@ -23,7 +23,7 @@ export default function FaqAccordion() {
         {ITEMS.map((id) => (
           <details
             key={id}
-            className="group rounded-2xl border border-slate-200 bg-white transition open:border-amber-300"
+            className="group rounded-2xl border border-slate-200 bg-white transition open:border-orange-300"
           >
             <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-sm font-semibold text-slate-900 [&::-webkit-details-marker]:hidden">
               {t(`faq.${id}.q`)}
