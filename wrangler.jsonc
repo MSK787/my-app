@@ -4,7 +4,7 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "my-app",
+	"name": "sun-volt-test1",
 	"compatibility_date": "2026-08-18",
 	"main": "vinext/server/fetch-handler",
 	"assets": {
