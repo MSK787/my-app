@@ -40,7 +40,7 @@ export default function SiteFooter() {
           <img
             src="/images/logo.png"
             alt="Aleppo Power"
-            className="mb-3 h-14 w-auto"
+            className="mb-3 h-14 w-auto dark:[filter:brightness(0)_invert(1)]"
           />
           <p className="mt-3 max-w-xs text-sm leading-6 text-slate-600">
             {t("footer.about")}

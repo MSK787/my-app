@@ -27,6 +27,7 @@ import { usePathname } from "next/navigation";
 import { useCart } from "./cart-context";
 import { useI18n } from "./i18n-context";
 import LanguageSwitcher from "./language-switcher";
+import SchemeToggle from "./scheme-toggle";
 import {
   CATEGORY_EMOJIS,
   QUICK_FILTERS,
@@ -329,7 +330,7 @@ export default function SiteHeader() {
             <img
               src="/images/logo.png"
               alt="Aleppo Power"
-              className="h-11 w-auto md:h-12"
+              className="h-11 w-auto md:h-12 dark:[filter:brightness(0)_invert(1)]"
             />
           </Link>
 
@@ -357,8 +358,11 @@ export default function SiteHeader() {
           </form>
 
           <div className="ms-auto flex items-center gap-2">
-            {/* Language switcher */}
-            <LanguageSwitcher />
+            {/* Language switcher + color scheme */}
+            <div className="flex items-center gap-1.5">
+              <LanguageSwitcher />
+              <SchemeToggle />
+            </div>
 
             {/* Cart (icon wiggles on hover) */}
             <Link
@@ -492,12 +496,15 @@ export default function SiteHeader() {
               </ul>
             </div>
 
-            {/* Language switcher (also available on mobile) */}
+            {/* Language + scheme (also available on mobile) */}
             <div className="flex items-center justify-between rounded-xl border border-slate-200 dark:border-slate-800 px-4 py-3">
-              <span className="text-sm font-medium text-slate-700">
-                {t("header.language")}
+              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                {t("header.language")} · {t("scheme.label")}
               </span>
-              <LanguageSwitcher />
+              <div className="flex items-center gap-2">
+                <LanguageSwitcher />
+                <SchemeToggle />
+              </div>
             </div>
           </div>
         </div>

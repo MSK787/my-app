@@ -69,6 +69,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               "try{var l=localStorage.getItem('sunvolt-lang');if(!l){l=(navigator.language||'').toLowerCase().indexOf('ar')===0?'ar':'en';}if(l==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl';}}catch(e){}",
           }}
         />
+        {/* Apply the saved color scheme BEFORE first paint (no flash). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{var s=localStorage.getItem('sunvolt-scheme')||'system';var d=s==='dark'||(s==='system'&&window.matchMedia('(prefers-color-scheme: dark)').matches);if(d)document.documentElement.classList.add('dark');document.documentElement.style.colorScheme=d?'dark':'light';}catch(e){}",
+          }}
+        />
         <I18nProvider>
           <CartProvider>
             <SiteHeader />
