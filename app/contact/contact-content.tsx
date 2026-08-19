@@ -49,7 +49,7 @@ export default function ContactContent() {
         {channels.map((channel) => (
           <div
             key={channel.title}
-            className="rounded-2xl border border-slate-200 bg-white p-5"
+            className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5"
           >
             <p className="text-2xl" aria-hidden>
               {channel.emoji}
@@ -68,7 +68,7 @@ export default function ContactContent() {
 
       {/* Form + info panels */}
       <div className="mt-10 grid gap-10 lg:grid-cols-2">
-        <div className="rounded-2xl border border-slate-200 p-6">
+        <div className="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
           <h2 className="text-lg font-semibold text-slate-900">
             {t("contact.sendMessage")}
           </h2>
@@ -78,7 +78,7 @@ export default function ContactContent() {
         </div>
 
         <div className="flex flex-col gap-4">
-          <div className="rounded-2xl bg-slate-900 p-8 text-white">
+          <div className="rounded-2xl bg-slate-900 dark:bg-amber-500 p-8 text-white dark:text-slate-900">
             <h2 className="text-lg font-semibold">{t("contact.whyTitle")}</h2>
             <ul className="mt-3 space-y-2 text-sm text-slate-300">
               {whyList.map((item) => (
@@ -86,11 +86,11 @@ export default function ContactContent() {
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl border border-orange-200 bg-orange-50 p-8">
-            <h2 className="text-lg font-semibold text-orange-900">
+          <div className="rounded-2xl border border-amber-200 dark:border-amber-500/30 bg-amber-50 dark:bg-amber-950/40 p-8">
+            <h2 className="text-lg font-semibold text-amber-900">
               {t("contact.hours")}
             </h2>
-            <p className="mt-2 text-sm text-orange-800">{t("contact.hoursText")}</p>
+            <p className="mt-2 text-sm text-amber-800">{t("contact.hoursText")}</p>
           </div>
         </div>
       </div>

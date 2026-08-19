@@ -43,11 +43,11 @@ export default function CartToast() {
         key={toast.id}
         role="status"
         aria-live="polite"
-        className="toast-in pointer-events-auto flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-xl shadow-slate-200/60"
+        className="toast-in pointer-events-auto flex items-center gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-3 shadow-xl shadow-slate-200/60"
       >
         <span
           aria-hidden
-          className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-emerald-100 text-sm font-bold text-emerald-700"
+          className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-emerald-100 dark:bg-emerald-500/20 text-sm font-bold text-emerald-700"
         >
           ✓
         </span>
@@ -57,7 +57,7 @@ export default function CartToast() {
           </p>
           <Link
             href="/cart"
-            className="text-xs font-semibold text-orange-700 hover:text-orange-800"
+            className="text-xs font-semibold text-amber-700 dark:text-amber-400 hover:text-amber-800"
           >
             {t("toast.viewCart")}
           </Link>
@@ -66,7 +66,7 @@ export default function CartToast() {
           type="button"
           onClick={() => setToast(null)}
           aria-label={t("common.close")}
-          className="ms-2 grid h-7 w-7 place-items-center rounded-full text-slate-500 transition hover:bg-slate-100 hover:text-slate-700"
+          className="ms-2 grid h-7 w-7 place-items-center rounded-full text-slate-500 dark:text-slate-400 transition hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-700"
         >
           ✕
         </button>

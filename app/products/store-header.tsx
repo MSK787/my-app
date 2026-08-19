@@ -34,7 +34,7 @@ export default function StoreHeader({
   return (
     <>
       <nav className="text-sm text-slate-500" aria-label="Breadcrumb">
-        <Link href="/" className="hover:text-orange-700">
+        <Link href="/" className="hover:text-amber-700">
           {t("store.home")}
         </Link>
         <span className="mx-2">/</span>

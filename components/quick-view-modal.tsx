@@ -53,12 +53,12 @@ export default function QuickViewModal({
         className="absolute inset-0 bg-slate-900/60"
       />
 
-      <div className="relative w-full max-w-3xl overflow-hidden rounded-3xl bg-white shadow-2xl">
+      <div className="relative w-full max-w-3xl overflow-hidden rounded-3xl bg-white dark:bg-slate-900 shadow-2xl">
         <button
           type="button"
           aria-label={t("common.close")}
           onClick={onClose}
-          className="absolute end-4 top-4 z-10 grid h-9 w-9 place-items-center rounded-full bg-white/90 text-slate-600 shadow transition hover:text-slate-900"
+          className="absolute end-4 top-4 z-10 grid h-9 w-9 place-items-center rounded-full bg-white/90 dark:bg-slate-900/90 text-slate-600 dark:text-slate-300 shadow transition hover:text-slate-900"
         >
           ✕
         </button>
@@ -83,7 +83,7 @@ export default function QuickViewModal({
             <Link
               href={`/products/${product.slug}`}
               onClick={onClose}
-              className="text-xl font-bold leading-snug text-slate-900 hover:text-orange-700"
+              className="text-xl font-bold leading-snug text-slate-900 dark:text-slate-100 hover:text-amber-700"
             >
               {product.name}
             </Link>
@@ -94,7 +94,7 @@ export default function QuickViewModal({
                 {formatPrice(product.price)}
               </p>
               {product.compareAtPrice && (
-                <p className="text-sm text-slate-500 line-through">
+                <p className="text-sm text-slate-500 dark:text-slate-400 line-through">
                   {formatPrice(product.compareAtPrice)}
                 </p>
               )}
@@ -104,7 +104,7 @@ export default function QuickViewModal({
             <ul className="space-y-1.5">
               {product.highlights.slice(0, 4).map((highlight) => (
                 <li key={highlight} className="flex gap-2 text-sm text-slate-600">
-                  <span className="text-orange-600" aria-hidden>
+                  <span className="text-amber-600" aria-hidden>
                     ⚡
                   </span>
                   <span>{highlight}</span>
@@ -117,7 +117,7 @@ export default function QuickViewModal({
               <div className="flex gap-2">
                 <AddToCartButton
                   product={product}
-                  className="flex-1 rounded-full bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-orange-700 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="flex-1 rounded-full bg-slate-900 dark:bg-amber-500 px-4 py-2.5 text-sm font-semibold text-white dark:text-slate-900 transition hover:bg-amber-700 disabled:cursor-not-allowed disabled:opacity-40"
                 />
                 <Link
                   href={inStock ? buildBuyNowUrl(product.slug, 1) : "#"}
@@ -125,7 +125,7 @@ export default function QuickViewModal({
                   onClick={inStock ? onClose : undefined}
                   className={`flex-1 rounded-full border border-slate-900 px-4 py-2.5 text-center text-sm font-semibold transition ${
                     inStock
-                      ? "text-slate-900 hover:border-orange-500 hover:text-orange-700"
+                      ? "text-slate-900 dark:text-slate-100 hover:border-amber-500 hover:text-amber-700 dark:hover:text-amber-400"
                       : "pointer-events-none opacity-40"
                   }`}
                 >
@@ -139,7 +139,7 @@ export default function QuickViewModal({
               <Link
                 href={`/products/${product.slug}`}
                 onClick={onClose}
-                className="text-center text-xs font-medium text-slate-500 transition hover:text-orange-700"
+                className="text-center text-xs font-medium text-slate-500 dark:text-slate-400 transition hover:text-amber-700"
               >
                 {t("common.viewDetails")}
               </Link>

@@ -40,7 +40,7 @@ function FeatureStrip() {
       {features.map((feature) => (
         <div
           key={feature.title}
-          className="rounded-2xl border border-slate-200 bg-white p-4 text-center transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-200/70"
+          className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 text-center transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-200/70"
         >
           <p className="text-2xl" aria-hidden>
             {feature.emoji}
@@ -65,7 +65,7 @@ function CategorySection() {
         </div>
         <Link
           href="/products"
-          className="hidden text-sm font-semibold text-orange-700 hover:text-orange-800 sm:block"
+          className="hidden text-sm font-semibold text-amber-700 dark:text-amber-400 hover:text-amber-800 dark:hover:text-amber-300 sm:block"
         >
           {t("home.viewAll")}
         </Link>
@@ -76,7 +76,7 @@ function CategorySection() {
           <Reveal key={category.id} delay={index * 50}>
             <Link
               href={`/products?category=${category.id}`}
-              className="group block overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-200/70"
+              className="group block overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-200/70"
             >
               <div className="relative aspect-square overflow-hidden bg-slate-100">
                 <Image
@@ -88,7 +88,7 @@ function CategorySection() {
                 />
               </div>
               <div className="p-3">
-                <p className="text-sm font-semibold text-slate-900 group-hover:text-orange-700">
+                <p className="text-sm font-semibold text-slate-900 dark:text-slate-100 group-hover:text-amber-700">
                   {getCategoryLabel(category.id, lang)}
                 </p>
                 <p className="mt-0.5 line-clamp-2 text-xs text-slate-500">
@@ -110,9 +110,9 @@ function HighlightedProduct() {
   if (!product) return null;
 
   return (
-    <section className="grid items-center gap-8 rounded-3xl bg-slate-900 p-6 sm:p-10 lg:grid-cols-2">
+    <section className="grid items-center gap-8 rounded-3xl bg-slate-900 dark:bg-slate-800 p-6 sm:p-10 lg:grid-cols-2">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-widest text-orange-400">
+        <p className="text-xs font-semibold uppercase tracking-widest text-amber-400">
           {t("home.ourPick")}
         </p>
         <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
@@ -121,7 +121,7 @@ function HighlightedProduct() {
         <ul className="mt-4 space-y-2">
           {product.highlights.slice(0, 3).map((highlight) => (
             <li key={highlight} className="flex gap-2 text-sm text-slate-300">
-              <span className="text-orange-400" aria-hidden>
+              <span className="text-amber-400" aria-hidden>
                 ⚡
               </span>
               {highlight}
@@ -131,7 +131,7 @@ function HighlightedProduct() {
         <div className="mt-6 flex flex-wrap items-center gap-3">
           <Link
             href={`/products/${product.slug}`}
-            className="rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-orange-400 active:scale-[0.98]"
+            className="rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-slate-900 dark:text-slate-100 transition hover:bg-amber-400 active:scale-[0.98]"
           >
             {t("home.viewProduct")}
           </Link>
@@ -164,14 +164,14 @@ function QuoteSection() {
   const { t } = useI18n();
 
   return (
-    <section className="rounded-3xl bg-slate-900 px-6 py-12 text-center sm:px-12">
+    <section className="rounded-3xl bg-slate-900 dark:bg-slate-800 px-6 py-12 text-center sm:px-12">
       <h2 className="text-2xl font-bold text-white">{t("home.quoteTitle")}</h2>
       <p className="mx-auto mt-2 max-w-xl text-sm text-slate-300">
         {t("home.quoteText")}
       </p>
       <Link
         href="/contact"
-        className="mt-6 inline-block rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-orange-400 active:scale-[0.98]"
+        className="mt-6 inline-block rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-slate-900 dark:text-slate-100 transition hover:bg-amber-400 active:scale-[0.98]"
       >
         {t("home.askQuote")}
       </Link>
@@ -185,35 +185,35 @@ export default function HomeContent() {
   return (
     <>
       {/* Hero — animated gradient background + entrance animation */}
-      <section className="hero-gradient relative overflow-hidden border-b border-orange-100">
+      <section className="hero-gradient relative overflow-hidden border-b border-amber-100">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 md:py-24">
           <div className="animate-fade-up">
-            <p className="inline-block rounded-full bg-orange-500/15 px-3 py-1 text-xs font-semibold text-orange-700">
+            <p className="inline-block rounded-full bg-amber-500/15 px-3 py-1 text-xs font-semibold text-amber-700">
               {t("home.badge")}
             </p>
-            <h1 className="mt-4 text-4xl font-extrabold leading-tight tracking-tight text-slate-900 md:text-5xl">
+            <h1 className="mt-4 text-4xl font-extrabold leading-tight tracking-tight text-slate-900 dark:text-slate-100 md:text-5xl">
               {t("home.heroLead")}
-              <span className="text-orange-600">{t("home.heroAccent")}</span>
+              <span className="text-amber-600">{t("home.heroAccent")}</span>
               {t("home.heroTail")}
             </h1>
             <p className="mt-4 max-w-md text-slate-600">{t("home.heroSubtitle")}</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
                 href="/products"
-                className="rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-700 active:scale-[0.98]"
+                className="rounded-full bg-slate-900 dark:bg-amber-500 px-6 py-3 text-sm font-semibold text-white dark:text-slate-900 transition hover:bg-amber-700 active:scale-[0.98]"
               >
                 {t("home.shopAll")}
               </Link>
               <Link
                 href="/contact"
-                className="rounded-full border border-slate-900 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-orange-500 hover:text-orange-700 active:scale-[0.98]"
+                className="rounded-full border border-slate-900 px-6 py-3 text-sm font-semibold text-slate-900 dark:text-slate-100 transition hover:border-amber-500 hover:text-amber-700 dark:hover:text-amber-400 active:scale-[0.98]"
               >
                 {t("home.talkEngineer")}
               </Link>
             </div>
             {/* Social proof line */}
             <p className="mt-5 flex items-center gap-2 text-sm text-slate-600">
-              <span aria-hidden className="tracking-tight text-orange-500">
+              <span aria-hidden className="tracking-tight text-amber-500">
                 ★★★★★
               </span>
               {t("home.heroRating")}
@@ -226,7 +226,7 @@ export default function HomeContent() {
               {HERO_IMAGES.map((image) => (
                 <div
                   key={image.src}
-                  className="relative aspect-square overflow-hidden rounded-3xl border-4 border-white bg-slate-100 shadow-xl shadow-orange-200/50"
+                  className="relative aspect-square overflow-hidden rounded-3xl border-4 border-white dark:border-slate-800 bg-slate-100 dark:bg-slate-800/60 shadow-xl shadow-amber-200/50"
                 >
                   <Image
                     src={image.src}
@@ -238,7 +238,7 @@ export default function HomeContent() {
                 </div>
               ))}
             </div>
-            <div className="animate-float absolute -bottom-4 -start-4 rounded-2xl border border-orange-200 bg-white px-5 py-3 shadow-lg">
+            <div className="animate-float absolute -bottom-4 -start-4 rounded-2xl border border-amber-200 dark:border-amber-500/30 bg-white dark:bg-slate-900 px-5 py-3 shadow-lg">
               <p className="text-xs text-slate-500">{t("home.startingFrom")}</p>
               <p className="text-xl font-bold text-slate-900">$189</p>
             </div>

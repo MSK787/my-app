@@ -40,7 +40,7 @@ export default function CartPage() {
         <p className="mt-2 text-sm text-slate-500">{t("cart.emptyHint")}</p>
         <Link
           href="/products"
-          className="mt-6 inline-block rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-700"
+          className="mt-6 inline-block rounded-full bg-slate-900 dark:bg-amber-500 px-6 py-3 text-sm font-semibold text-white dark:text-slate-900 transition hover:bg-amber-700"
         >
           {t("cart.startShopping")}
         </Link>
@@ -60,17 +60,17 @@ export default function CartPage() {
       </h1>
 
       {/* Free shipping progress */}
-      <div className="mt-4 max-w-xl rounded-2xl border border-orange-200 bg-orange-50 p-4">
-        <p className="text-sm font-medium text-orange-900">
+      <div className="mt-4 max-w-xl rounded-2xl border border-amber-200 dark:border-amber-500/30 bg-amber-50 dark:bg-amber-950/40 p-4">
+        <p className="text-sm font-medium text-amber-900">
           {shipping === 0
             ? t("cart.unlocked")
             : t("cart.moreForFree", {
                 amount: formatPrice(FREE_SHIPPING_THRESHOLD - subtotal),
               })}
         </p>
-        <div className="mt-2 h-2 overflow-hidden rounded-full bg-orange-200">
+        <div className="mt-2 h-2 overflow-hidden rounded-full bg-amber-200">
           <div
-            className="h-full rounded-full bg-orange-500 transition-all"
+            className="h-full rounded-full bg-amber-500 transition-all"
             style={{ width: `${progressToFreeShipping * 100}%` }}
           />
         </div>
@@ -87,7 +87,7 @@ export default function CartPage() {
             return (
               <li
                 key={line.productSlug}
-                className="flex gap-4 rounded-2xl border border-slate-200 p-4"
+                className="flex gap-4 rounded-2xl border border-slate-200 dark:border-slate-800 p-4"
               >
                 <Link
                   href={`/products/${product.slug}`}
@@ -105,7 +105,7 @@ export default function CartPage() {
                 <div className="flex flex-1 flex-col">
                   <Link
                     href={`/products/${product.slug}`}
-                    className="text-sm font-semibold text-slate-900 hover:text-orange-700"
+                    className="text-sm font-semibold text-slate-900 dark:text-slate-100 hover:text-amber-700"
                   >
                     {product.name}
                   </Link>
@@ -121,7 +121,7 @@ export default function CartPage() {
                         onClick={() =>
                           setQuantity(line.productSlug, line.quantity - 1)
                         }
-                        className="px-3 py-1 text-slate-600 transition hover:text-orange-700"
+                        className="px-3 py-1 text-slate-600 dark:text-slate-300 transition hover:text-amber-700"
                         aria-label={t("common.decreaseQty", { name: product.name })}
                       >
                         −
@@ -134,7 +134,7 @@ export default function CartPage() {
                         onClick={() =>
                           setQuantity(line.productSlug, line.quantity + 1)
                         }
-                        className="px-3 py-1 text-slate-600 transition hover:text-orange-700"
+                        className="px-3 py-1 text-slate-600 dark:text-slate-300 transition hover:text-amber-700"
                         aria-label={t("common.increaseQty", { name: product.name })}
                       >
                         +
@@ -148,7 +148,7 @@ export default function CartPage() {
                       <button
                         type="button"
                         onClick={() => removeItem(line.productSlug)}
-                        className="text-xs font-medium text-slate-500 underline-offset-2 transition hover:text-red-600 hover:underline"
+                        className="text-xs font-medium text-slate-500 dark:text-slate-400 underline-offset-2 transition hover:text-red-600 dark:hover:text-red-400 hover:underline"
                       >
                         {t("common.remove")}
                       </button>
@@ -161,7 +161,7 @@ export default function CartPage() {
         </ul>
 
         {/* Order summary */}
-        <aside className="h-fit rounded-2xl border border-slate-200 bg-slate-50 p-6">
+        <aside className="h-fit rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 p-6">
           <h2 className="text-lg font-semibold text-slate-900">
             {t("cart.summary")}
           </h2>
@@ -187,7 +187,7 @@ export default function CartPage() {
                 })}
               </p>
             )}
-            <div className="flex justify-between border-t border-slate-200 pt-3 text-base">
+            <div className="flex justify-between border-t border-slate-200 dark:border-slate-800 pt-3 text-base">
               <dt className="font-semibold text-slate-900">{t("cart.total")}</dt>
               <dd className="font-bold text-slate-900">{formatPrice(total)}</dd>
             </div>
@@ -195,13 +195,13 @@ export default function CartPage() {
 
           <Link
             href="/checkout"
-            className="mt-6 block rounded-full bg-slate-900 py-3 text-center text-sm font-semibold text-white transition hover:bg-orange-700"
+            className="mt-6 block rounded-full bg-slate-900 dark:bg-amber-500 py-3 text-center text-sm font-semibold text-white dark:text-slate-900 transition hover:bg-amber-700"
           >
             {t("cart.checkout")}
           </Link>
           <Link
             href="/products"
-            className="mt-3 block text-center text-sm font-medium text-slate-500 hover:text-orange-700"
+            className="mt-3 block text-center text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-amber-700"
           >
             {t("cart.continueShopping")}
           </Link>

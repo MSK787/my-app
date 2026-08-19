@@ -28,7 +28,7 @@ export default function CategoryDropdown() {
         type="button"
         onClick={() => setOpen((value) => !value)}
         aria-expanded={open}
-        className="flex items-center gap-2 whitespace-nowrap rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-orange-400 hover:text-orange-700"
+        className="flex items-center gap-2 whitespace-nowrap rounded-full border border-slate-200 dark:border-slate-800 px-4 py-2 text-sm font-semibold text-slate-700 dark:text-slate-300 transition hover:border-amber-400 hover:text-amber-700"
       >
         <span aria-hidden>☰</span>
         {t("header.categories")}
@@ -48,7 +48,7 @@ export default function CategoryDropdown() {
           />
 
           {/* Dropdown panel */}
-          <div className="absolute left-0 top-full z-40 mt-2 w-72 rounded-2xl border border-slate-200 bg-white p-4 shadow-xl">
+          <div className="absolute left-0 top-full z-40 mt-2 w-72 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 shadow-xl">
             {/* Quick browse */}
             <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
               {t("header.quickBrowse")}
@@ -58,7 +58,7 @@ export default function CategoryDropdown() {
                 <Link
                   href="/products"
                   onClick={() => setOpen(false)}
-                  className="block rounded-lg px-3 py-1.5 text-sm text-slate-600 transition hover:bg-orange-50 hover:text-orange-700"
+                  className="block rounded-lg px-3 py-1.5 text-sm text-slate-600 dark:text-slate-300 transition hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700"
                 >
                   {t("header.allProducts")}
                 </Link>
@@ -68,7 +68,7 @@ export default function CategoryDropdown() {
                   <Link
                     href={`/products?filter=${filter.id}`}
                     onClick={() => setOpen(false)}
-                    className="block rounded-lg px-3 py-1.5 text-sm text-slate-600 transition hover:bg-orange-50 hover:text-orange-700"
+                    className="block rounded-lg px-3 py-1.5 text-sm text-slate-600 dark:text-slate-300 transition hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700"
                   >
                     {t(
                       `header.${
@@ -94,7 +94,7 @@ export default function CategoryDropdown() {
                   <Link
                     href={`/products?category=${category.id}`}
                     onClick={() => setOpen(false)}
-                    className="flex items-center justify-between rounded-lg px-3 py-1.5 text-sm text-slate-600 transition hover:bg-orange-50 hover:text-orange-700"
+                    className="flex items-center justify-between rounded-lg px-3 py-1.5 text-sm text-slate-600 dark:text-slate-300 transition hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:text-amber-700"
                   >
                     {category.name}
                     <span className="text-xs text-slate-500">

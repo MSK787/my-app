@@ -27,7 +27,7 @@ export default function StoreGrid({ products }: { products: Product[] }) {
   // No results — offer to clear filters.
   if (products.length === 0) {
     return (
-      <div className="rounded-3xl border border-dashed border-slate-300 p-12 text-center">
+      <div className="rounded-3xl border border-dashed border-slate-300 dark:border-slate-700 p-12 text-center">
         <p className="text-4xl" aria-hidden>
           🔍
         </p>
@@ -37,7 +37,7 @@ export default function StoreGrid({ products }: { products: Product[] }) {
         <p className="mt-1 text-sm text-slate-500">{t("common.noResultsHint")}</p>
         <Link
           href="/products"
-          className="mt-4 inline-block rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition hover:bg-orange-700"
+          className="mt-4 inline-block rounded-full bg-slate-900 dark:bg-amber-500 px-5 py-2 text-sm font-semibold text-white dark:text-slate-900 transition hover:bg-amber-700"
         >
           {t("common.clearFilters")}
         </Link>
@@ -56,8 +56,8 @@ export default function StoreGrid({ products }: { products: Product[] }) {
           aria-label={t("common.gridView")}
           className={`grid h-9 w-9 place-items-center rounded-lg border text-sm transition ${
             view === "grid"
-              ? "border-slate-900 bg-slate-900 text-white"
-              : "border-slate-200 text-slate-500 hover:border-slate-400"
+              ? "border-slate-900 dark:border-amber-500 bg-slate-900 dark:bg-amber-500 text-white dark:text-slate-900"
+              : "border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:border-slate-400"
           }`}
         >
           ▦
@@ -69,8 +69,8 @@ export default function StoreGrid({ products }: { products: Product[] }) {
           aria-label={t("common.listView")}
           className={`grid h-9 w-9 place-items-center rounded-lg border text-sm transition ${
             view === "list"
-              ? "border-slate-900 bg-slate-900 text-white"
-              : "border-slate-200 text-slate-500 hover:border-slate-400"
+              ? "border-slate-900 dark:border-amber-500 bg-slate-900 dark:bg-amber-500 text-white dark:text-slate-900"
+              : "border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:border-slate-400"
           }`}
         >
           ☰
@@ -101,10 +101,10 @@ function ListRow({ product }: { product: Product }) {
   const { lang, t } = useI18n();
 
   return (
-    <li className="flex gap-4 rounded-2xl border border-slate-200 bg-white p-4 transition hover:shadow-lg hover:shadow-slate-200/70">
+    <li className="flex gap-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 transition hover:shadow-lg hover:shadow-slate-200/70">
       <Link
         href={`/products/${product.slug}`}
-        className="relative h-28 w-28 shrink-0 overflow-hidden rounded-xl bg-slate-100 sm:h-36 sm:w-36"
+        className="relative h-28 w-28 shrink-0 overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800/60 sm:h-36 sm:w-36"
       >
         <Image
           src={product.image}
@@ -120,23 +120,23 @@ function ListRow({ product }: { product: Product }) {
           {getCategoryLabel(product.category, lang)}
         </p>
         <Link href={`/products/${product.slug}`}>
-          <h2 className="mt-0.5 text-sm font-semibold text-slate-900 hover:text-orange-700 sm:text-base">
+          <h2 className="mt-0.5 text-sm font-semibold text-slate-900 dark:text-slate-100 hover:text-amber-700 dark:hover:text-amber-400 sm:text-base">
             {product.name}
           </h2>
         </Link>
         <StarRating rating={product.rating} count={product.reviewCount} />
 
-        <p className="mt-2 hidden text-sm leading-6 text-slate-500 sm:line-clamp-2">
+        <p className="mt-2 hidden text-sm leading-6 text-slate-500 dark:text-slate-400 sm:line-clamp-2">
           {product.description}
         </p>
 
         <div className="mt-auto flex flex-wrap items-end justify-between gap-3 pt-3">
           <div className="flex items-baseline gap-2">
-            <p className="text-lg font-bold text-slate-900 sm:text-xl">
+            <p className="text-lg font-bold text-slate-900 dark:text-slate-100 sm:text-xl">
               {formatPrice(product.price)}
             </p>
             {product.compareAtPrice && (
-              <p className="text-xs text-slate-500 line-through">
+              <p className="text-xs text-slate-500 dark:text-slate-400 line-through">
                 {formatPrice(product.compareAtPrice)}
               </p>
             )}
@@ -145,7 +145,7 @@ function ListRow({ product }: { product: Product }) {
           <div className="flex items-center gap-2">
             <AddToCartButton
               product={product}
-              className="rounded-full bg-slate-900 px-5 py-2 text-xs font-semibold text-white transition hover:bg-orange-700 disabled:cursor-not-allowed disabled:opacity-40"
+              className="rounded-full bg-slate-900 dark:bg-amber-500 px-5 py-2 text-xs font-semibold text-white dark:text-slate-900 transition hover:bg-amber-700 disabled:cursor-not-allowed disabled:opacity-40"
             />
             <WhatsAppButton
               product={product}
